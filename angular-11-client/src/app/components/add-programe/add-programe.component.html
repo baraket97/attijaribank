@@ -1,0 +1,67 @@
+<!-- aaaaaaaaaaaaaaaaaaa -->
+<br />
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input class="form-control" type="date" id="date" [(ngModel)]="programe.date" name="date">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="date">Durée de l'incident</label>
+        <div class="input-group">
+          <input type="number" class="form-control" [(ngModel)]="programe.duree" name="duree">
+          <div class="input-group-append">
+            <span class="input-group-text" id="duree">minutes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="programme">Programme</label>
+    <textarea class="form-control" id="programme" rows="3" [(ngModel)]="programe.title" name="title"></textarea>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="constats">Constats</label>
+        <textarea class="form-control" id="constats" rows="2" [(ngModel)]="programe.constat" name="constat"></textarea>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="investigation">Détail investigations</label>
+        <textarea class="form-control" id="investigation" rows="2" [(ngModel)]="programe.delait"
+          name="delait"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="cause">Cause de l'incident</label>
+        <textarea class="form-control" id="cause" rows="2" [(ngModel)]="programe.cause" name="cause"></textarea>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="concequence">Conséquence de l'incident</label>
+        <textarea class="form-control" id="concequence" rows="2" [(ngModel)]="programe.conseq" name="conseq"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="action">Actions réalisés</label>
+    <textarea class="form-control" id="action" rows="2" [(ngModel)]="programe.action" name="action"></textarea>
+  </div>
+  <br />
+  <div class="row justify-content-md-center">
+    <button (click)="savePrograme()" class="btn btn-success">Submit</button>
+  </div>
+</div>
+
+<!-- ******************************************** -->

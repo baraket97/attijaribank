@@ -1,0 +1,83 @@
+<div>
+  <div *ngIf="currentPrograme.id" class="edit-form">
+    <h4>Program</h4>
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input class="form-control" type="date" id="date" [(ngModel)]="currentPrograme.date" name="date">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="date">Durée de l'incident</label>
+            <div class="input-group">
+              <input type="number" class="form-control" [(ngModel)]="currentPrograme.duree" name="duree">
+              <div class="input-group-append">
+                <span class="input-group-text" id="duree">minutes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="programme">Programme</label>
+        <textarea class="form-control" id="programme" rows="3" [(ngModel)]="currentPrograme.title"
+          name="title"></textarea>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="constats">Constats</label>
+            <textarea class="form-control" id="constats" rows="2" [(ngModel)]="currentPrograme.constat"
+              name="constat"></textarea>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="investigation">Détail investigations</label>
+            <textarea class="form-control" id="investigation" rows="2" [(ngModel)]="currentPrograme.delait"
+              name="delait"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="cause">Cause de l'incident</label>
+            <textarea class="form-control" id="cause" rows="2" [(ngModel)]="currentPrograme.cause"
+              name="cause"></textarea>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="concequence">Conséquence de l'incident</label>
+            <textarea class="form-control" id="concequence" rows="2" [(ngModel)]="currentPrograme.conseq"
+              name="conseq"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="action">Actions réalisés</label>
+        <textarea class="form-control" id="action" rows="2" [(ngModel)]="currentPrograme.action"
+          name="action"></textarea>
+      </div>
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deletePrograme()">
+      Delete
+    </button>
+    <div  *ngIf="showAdminBoard">
+    <button type="submit" *ngIf="showAdminBoard" class="badge badge-success mb-2" (click)="updatePrograme()">
+      Update
+    </button>
+    </div>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentPrograme.id">
+    <br />
+    <p>Cannot access this Programe...</p>
+  </div>
+</div>

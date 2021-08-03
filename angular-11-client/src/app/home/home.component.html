@@ -1,0 +1,5 @@
+<header *ngIf="!isLoggedIn"></header>
+<!-- <app-welcome></app-welcome> -->
+<div *ngIf="isLoggedIn" class="container mt-3">
+  <app-programes-list></app-programes-list>
+</div>

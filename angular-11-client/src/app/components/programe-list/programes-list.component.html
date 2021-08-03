@@ -1,0 +1,53 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search by title" [(ngModel)]="owner" />
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="searchOwner()">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>News List</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let programe of programes; let i = index" [class.active]="i == currentIndex"
+        (click)="setActivePrograme(programe, i)">
+        {{ programe.title }}
+      </li>
+    </ul>
+
+    <!-- <button class="m-3 btn btn-sm btn-danger" (click)="removeAllPosts()">
+      Remove All
+    </button> -->
+  </div>
+  <!--new  programe details -->
+  <div class="col-md-6">
+    <div *ngIf="currentPrograme" class="card border-dark mb-3">
+      <div class="card-header">
+        <div class="row justify-content-between">
+          <!-- <div class="col">{{ currentPrograme.owner }}</div> -->
+          <div class="col-auto">
+            <a class="badge badge-warning" routerLink="/programes/{{ currentPrograme?.id }}">
+              Edit
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body text-dark">
+        <h5 class="card-title">
+          {{ currentPrograme.title }}
+        </h5>
+        <p class="card-text">{{ currentPrograme.date }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- end new programe detail -->
+
+  <div *ngIf="!currentPrograme">
+    <br />
+    <p>Please click on a Programe...</p>
+  </div>
+</div>
